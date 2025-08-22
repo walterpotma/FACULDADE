@@ -1,15 +1,6 @@
 #include <iostream>
 #include <windows.h>
 
-void ativarModoVirtualTerminal() {
-	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	if (hOut == INVALID_HANDLE_VALUE) return;
-	DWORD dwMode = 0;
-	if (!GetConsoleMode(hOut, &dwMode)) return;
-	dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
-	SetConsoleMode(hOut, dwMode);
-}
-
 int aula190825() {
 	for (int i = 0; i <= 10; i++) {
 		int resto = i % 2; // Calcula o resto da divisao de i por 2
